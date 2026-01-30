@@ -1,0 +1,142 @@
+/* ================= FORM NOTIFICATIONS ================= */
+.form-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    min-width: 300px;
+    background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+    border-radius: 12px;
+    padding: 18px 22px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    z-index: 10000;
+    animation: slideInRight 0.3s ease;
+    border-left: 5px solid #2196F3;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateX(400px);
+    pointer-events: none;
+}
+
+.form-notification.show {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(400px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.form-notification-success {
+    border-left-color: #4caf50;
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.05) 0%, rgba(76, 175, 80, 0.02) 100%);
+}
+
+.form-notification-success i {
+    color: #4caf50;
+    font-size: 20px;
+}
+
+.form-notification-error {
+    border-left-color: #f44336;
+    background: linear-gradient(135deg, rgba(244, 67, 54, 0.05) 0%, rgba(244, 67, 54, 0.02) 100%);
+}
+
+.form-notification-error i {
+    color: #f44336;
+    font-size: 20px;
+}
+
+.form-notification-info {
+    border-left-color: #2196F3;
+    background: linear-gradient(135deg, rgba(33, 150, 243, 0.05) 0%, rgba(33, 150, 243, 0.02) 100%);
+}
+
+.form-notification-info i {
+    color: #2196F3;
+    font-size: 20px;
+}
+
+.notification-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #333;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.notification-content i {
+    flex-shrink: 0;
+    animation: checkBounce 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes checkBounce {
+    0% {
+        transform: scale(0) rotate(-45deg);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1) rotate(0);
+    }
+}
+
+/* Form fields enhancement */
+.appointment-form-card input[type="text"],
+.appointment-form-card input[type="email"],
+.appointment-form-card input[type="tel"],
+.appointment-form-card input[type="date"],
+.appointment-form-card select,
+.appointment-form-card textarea {
+    transition: all 0.3s ease;
+}
+
+.appointment-form-card input:invalid:not(:placeholder-shown),
+.appointment-form-card select:invalid,
+.appointment-form-card textarea:invalid:not(:placeholder-shown) {
+    border-color: #f44336;
+    background: rgba(244, 67, 54, 0.05);
+}
+
+.appointment-form-card input:valid:not(:placeholder-shown),
+.appointment-form-card select:valid,
+.appointment-form-card textarea:valid:not(:placeholder-shown) {
+    border-color: #4caf50;
+    background: rgba(76, 175, 80, 0.02);
+}
+
+/* Responsive notifications */
+@media (max-width: 768px) {
+    .form-notification {
+        min-width: 280px;
+        right: 10px;
+        left: 10px;
+        top: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-notification {
+        min-width: auto;
+        right: 8px;
+        left: 8px;
+        padding: 14px 16px;
+        font-size: 12px;
+    }
+
+    .notification-content i {
+        font-size: 16px;
+    }
+}

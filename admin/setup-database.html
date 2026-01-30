@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Database Setup</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .btn {
+            background: #007bff;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .btn:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Database Setup for Gallery & About Sections</h1>
+        <p>Click the button below to set up the database tables and default data:</p>
+        <a href="migrate-gallery-about.php" class="btn">Run Database Setup</a>
+
+        <h2>What this will do:</h2>
+        <ul>
+            <li>Create gallery table for dynamic gallery management</li>
+            <li>Create about_sections table for doctor and father information</li>
+            <li>Add default about sections with sample content</li>
+            <li>Create necessary upload directories</li>
+        </ul>
+
+        <h2>After setup:</h2>
+        <ul>
+            <li><a href="gallery.php">Manage Gallery</a> - View, add, edit, delete gallery images</li>
+            <li><a href="about-sections.php">Manage About Sections</a> - Manage doctor and father information</li>
+        </ul>
+    </div>
+</body>
+
+</html>
